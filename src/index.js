@@ -11,6 +11,14 @@ export const  InputField = ({input, label, required, meta: { touched, error }, .
   </Form.Field>
 )
 
+export const  LabelInputField = ({input, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
+  // <Form.Field  control={Input} label={label} error={touched && error?true:false}  {...input} {...rest} />
+  <Form.Field error={touched && error?true:false} required={required}>
+    <Input required={required} {...input} {...rest} />
+    {touched && error ?<span style={{color:'#9F3A38'}}>{error}</span>: null}
+  </Form.Field>
+)
+
 export const TextAreaField = ({input, label, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
   // <Form.Field  control={TextArea} label={label} error={touched && error?true:false}  {...input} {...rest} />
   <Form.Field error={touched && error?true:false} required={required}>
