@@ -12,7 +12,7 @@ Semantic-ui-react component integration with Redux form
 4. [ToggleField](https://react.semantic-ui.com/addons/radio#radio-example-toggle)
 5. [RadioField](https://react.semantic-ui.com/collections/form#form-example-field-control)
 6. [CheckboxField](https://react.semantic-ui.com/collections/form#form-example-required-field-shorthand)
-7. [LabelInputField] - A Form Field input component formatted with a label. [Labled Input](https://react.semantic-ui.com/elements/input#input-example-right-labeled-basic)
+7. LabelInputField - A Form Field input component formatted with a label. [Labled Input](https://react.semantic-ui.com/elements/input#input-example-right-labeled-basic)
 8. [Toggle](https://react.semantic-ui.com/addons/radio#radio-example-toggle)
 9. [RadioComponent](https://react.semantic-ui.com/addons/radio)
 10. [CheckboxComponent](https://react.semantic-ui.com/modules/checkbox)
