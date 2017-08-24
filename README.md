@@ -17,10 +17,7 @@ Semantic-ui-react component integration with Redux form
 9. [RadioComponent](https://react.semantic-ui.com/addons/radio)
 10. [CheckboxComponent](https://react.semantic-ui.com/modules/checkbox)
 
-# Demo
-[Editor](https://codesandbox.io/s/pk7jx9pkxq)
-[Full Screen](https://codesandbox.io/embed/pk7jx9pkxq)
-
+# [Demo](https://codesandbox.io/s/pk7jx9pkxq)
 
 # Example input text
 import { Field } from 'redux-form';
