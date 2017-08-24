@@ -2,8 +2,7 @@ import React from 'react';
 import { Form, Input, Radio, Checkbox, Select, TextArea } from 'semantic-ui-react';
 
 
-export const  InputField = ({input, label, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
-  // <Form.Field  control={Input} label={label} error={touched && error?true:false}  {...input} {...rest} />
+export const InputField = ({input, label, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
   <Form.Field error={touched && error?true:false} required={required}>
     <label>{label}</label>
     <Input required={required} {...input} {...rest} />
@@ -11,8 +10,7 @@ export const  InputField = ({input, label, required, meta: { touched, error }, .
   </Form.Field>
 )
 
-export const  LabelInputField = ({input, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
-  // <Form.Field  control={Input} label={label} error={touched && error?true:false}  {...input} {...rest} />
+export const LabelInputField = ({input, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
   <Form.Field error={touched && error?true:false} required={required}>
     <Input required={required} {...input} {...rest} />
     {touched && error ?<span style={{color:'#9F3A38'}}>{error}</span>: null}
@@ -20,7 +18,6 @@ export const  LabelInputField = ({input, required, meta: { touched, error }, ...
 )
 
 export const TextAreaField = ({input, label, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
-  // <Form.Field  control={TextArea} label={label} error={touched && error?true:false}  {...input} {...rest} />
   <Form.Field error={touched && error?true:false} required={required}>
     <label>{label}</label>
     <TextArea required={required} {...input} {...rest} />
@@ -29,10 +26,6 @@ export const TextAreaField = ({input, label, required, meta: { touched, error },
 )
 
 export const SelectField = ({ input, label, required, options, meta:{touched, error}, ...custom}) => ( //eslint-disable-line
-  // <Form.Field control={Select} search label={label} options={options}
-  //   error={touched && error?true:false}
-  //   value={input.value}
-  //   onChange={(event, data) => input.onChange(data.value)} {...custom}/>
   <Form.Field error={touched && error?true:false} required={required}>
     <label>{label}</label>
     <Select search value={input.value} required={required}

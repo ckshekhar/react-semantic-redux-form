@@ -5,6 +5,10 @@
   "main": "dist/index",
   "author": "ChandraShekhar",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckshekhar73/react-semantic-redux-form.git"
+  },
   "keywords": [
     "react",
     "semantic-ui-react",
@@ -16,6 +20,7 @@
   },
   "dependencies": {
     "react": "^15.6.1",
+    "redux-form": "^7.0.3",
     "semantic-ui-react": "^0.71.5"
   },
   "devDependencies": {
