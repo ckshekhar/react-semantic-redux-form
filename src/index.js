@@ -1,18 +1,28 @@
 import React from 'react';
-import { Form, Input, Radio, Checkbox, Select, TextArea } from 'semantic-ui-react';
+import {
+  Form,
+  Input as InputComponent,
+  Radio as RadioComponent,
+  Checkbox as CheckboxComponent,
+  Select as SelectComponent,
+  TextArea as TextAreaComponent} from 'semantic-ui-react';
 
 
-export const InputField = ({input, label, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
+export const InputField = ({ input, label, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
   <Form.Field error={touched && error?true:false} required={required}>
     <label>{label}</label>
-    <Input required={required} {...input} {...rest} />
+    <InputComponent required={required} {...input} {...rest} />
     {touched && error ?<span style={{color:'#9F3A38'}}>{error}</span>: null}
   </Form.Field>
 )
 
+export const Input = ({input, required, meta: { touched, error }, ...rest}) => (
+  <InputComponent required={required} {...input} {...rest} />
+)
+
 export const LabelInputField = ({input, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
   <Form.Field error={touched && error?true:false} required={required}>
-    <Input required={required} {...input} {...rest} />
+    <InputComponent required={required} {...input} {...rest} />
     {touched && error ?<span style={{color:'#9F3A38'}}>{error}</span>: null}
   </Form.Field>
 )
@@ -20,55 +30,65 @@ export const LabelInputField = ({input, required, meta: { touched, error }, ...r
 export const TextAreaField = ({input, label, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
   <Form.Field error={touched && error?true:false} required={required}>
     <label>{label}</label>
-    <TextArea required={required} {...input} {...rest} />
+    <TextAreaComponent required={required} {...input} {...rest} />
     {touched && error ? <span style={{color:'#9F3A38'}}>{error}</span> : null}
   </Form.Field>
 )
 
+export const TextArea = ({ input, required, meta: { touched, error }, ...rest }) => (
+  <TextAreaComponent required={required} {...input} {...rest} />
+);
+
 export const SelectField = ({ input, label, required, options, meta:{touched, error}, ...custom}) => ( //eslint-disable-line
   <Form.Field error={touched && error?true:false} required={required}>
     <label>{label}</label>
-    <Select search value={input.value} required={required}
+    <SelectComponent search value={input.value} required={required}
       options={options}
       onChange={(event, data) => input.onChange(data.value)} {...custom}/>
     {touched && error ? <span style={{color:'#9F3A38'}}>{error}</span> : null}
   </Form.Field>
 )
 
+export const Select = ({ input, required, options, meta: { touched, error }, ...rest }) => (
+  <SelectComponent search value={input.value} required={required}
+    options={options}
+    onChange={(event, data) => input.onChange(data.value)} {...rest}/>
+)
+
 export const ToggleField = ({input, label, defaultChecked}) => ( //eslint-disable-line
-  <Form.Field control={Radio} toggle label={label}
+  <Form.Field control={RadioComponent} toggle label={label}
     checked={input.value ? true : false}
     defaultChecked={defaultChecked}
     onClick={(event, data) => input.onChange(!data.checked)}/>
 );
 
 export const Toggle = ({input, label, defaultChecked}) => ( //eslint-disable-line
-  <Radio toggle label={label}
+  <RadioComponent toggle label={label}
     checked={input.value ? true : false}
     defaultChecked={defaultChecked}
     onClick={(event, data) => input.onChange(!data.checked)} />
 );
 
-export const RadioComponent = ({input, label, meta: {touched, error}, ...custom}) => ( //eslint-disable-line
-  <Radio label={label}
+export const Radio = ({input, label, meta: {touched, error}, ...custom}) => ( //eslint-disable-line
+  <RadioComponent label={label}
     checked={input.value ? true : false}
     onClick={(event, data) => input.onChange(!data.checked)} {...custom}/>
 );
 
 export const RadioField = ({input, label, meta: {touched, error}, ...custom}) => ( //eslint-disable-line
-  <Form.Field control={Radio} label={label}
+  <Form.Field control={RadioComponent} label={label}
     checked={input.value ? true : false}
     onClick={(event, data) => input.onChange(!data.checked)} {...custom}/>
 );
 
-export const CheckboxComponent = ({input, label, meta: {touched, error}, ...custom}) => ( //eslint-disable-line
-  <Checkbox label={label}
+export const Checkbox = ({input, label, meta: {touched, error}, ...custom}) => ( //eslint-disable-line
+  <CheckboxComponent label={label}
     checked={input.value ? true : false}
     onClick={(event, data) => input.onChange(!data.checked)} {...custom}/>
 );
 
 export const CheckboxField = ({input, label, meta: {touched, error}, ...custom}) => ( //eslint-disable-line
-  <Form.Field control={Checkbox} label={label}
+  <Form.Field control={CheckboxComponent} label={label}
     checked={input.value ? true : false}
     onClick={(event, data) => input.onChange(!data.checked)} {...custom}/>
 );
