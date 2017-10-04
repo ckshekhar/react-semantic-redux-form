@@ -19,6 +19,10 @@ Semantic-ui-react component integration with Redux form
 11. [Input](https://react.semantic-ui.com/collections/form#form-example-subcomponent-control)
 12. [TextArea](https://react.semantic-ui.com/addons/text-area#text-area-example-text-area)
 13. [Select](https://react.semantic-ui.com/addons/select)
+14. Dropdown 
+15. DropdownField
+16. RangeField
+17. Range
 
 
 # [Demo](https://codesandbox.io/s/pk7jx9pkxq)

@@ -5,7 +5,8 @@ import {
   Radio as RadioComponent,
   Checkbox as CheckboxComponent,
   Select as SelectComponent,
-  TextArea as TextAreaComponent} from 'semantic-ui-react';
+  TextArea as TextAreaComponent,
+  Dropdown as DropdownComponent} from 'semantic-ui-react';
 
 
 export const InputField = ({ input, label, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
@@ -92,3 +93,31 @@ export const CheckboxField = ({input, label, meta: {touched, error}, ...custom})
     checked={input.value ? true : false}
     onClick={(event, data) => input.onChange(!data.checked)} {...custom}/>
 );
+
+export const  RangeField = ({input, label, min, max, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
+  <Form.Field error={touched && error?true:false} required={required}>
+    <label>{label} : {input.value}</label>
+    <input type='range' required={required} min={min} max={max} {...input} {...rest} />
+    {touched && error ?<span style={{color:'#9F3A38'}}>{error}</span>: null}
+  </Form.Field>
+)
+
+export const  Range = ({input, min, max, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
+    <input type='range' required={required} min={min} max={max} {...input} {...rest} />
+)
+
+export const DropdownField = ({ input, label, required, options, meta:{touched, error}, ...custom}) => ( //eslint-disable-line
+  <Form.Field error={touched && error?true:false} required={required}>
+    <label>{label}</label>
+    <DropdownComponent search value={input.value} required={required}
+      options={options}
+      onChange={(event, data) => input.onChange(data.value)} {...custom}/>
+    {touched && error ? <span style={{color:'#9F3A38'}}>{error}</span> : null}
+  </Form.Field>
+)
+
+export const Dropdown = ({ input, required, options, meta: { touched, error }, ...rest }) => (
+  <DropdownComponent search value={input.value} required={required}
+    options={options}
+    onChange={(event, data) => input.onChange(data.value)} {...rest}/>
+)

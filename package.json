@@ -1,6 +1,6 @@
 {
   "name": "react-semantic-redux-form",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Semantic-ui-react component integration with Redux form",
   "main": "dist/index",
   "author": "ChandraShekhar",
@@ -10,9 +10,13 @@
     "url": "https://github.com/ckshekhar73/react-semantic-redux-form.git"
   },
   "keywords": [
+    "semantic redux form",
+    "semantic ui react redux form",
+    "semantic react",
     "react",
     "semantic-ui-react",
-    "redux form"
+    "redux form",
+    "semantic redux integration"
   ],
   "scripts": {
     "build": "babel src --out-dir dist",
