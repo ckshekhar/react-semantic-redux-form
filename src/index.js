@@ -121,3 +121,26 @@ export const Dropdown = ({ input, required, options, meta: { touched, error }, .
     options={options}
     onChange={(event, data) => input.onChange(data.value)} {...rest}/>
 )
+
+export const UploadField = ({ label, input, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
+  <Form.Field error={touched && error} required={required}>
+		<label>{label}</label>
+		<InputComponent
+			type="file"
+			value={input.value === '' && input.value}
+			onChange={e => input.onChange(e.target.files[0])}
+			{...rest}
+		/>
+		{touched && error ? <span style={{color:'#9F3A38'}}>{error}</span> : null}
+  </Form.Field>
+)
+
+export const Upload = ({ input, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
+    <InputComponent
+      required={required}
+			type="file"
+			value={input.value === '' && input.value}
+			onChange={e => input.onChange(e.target.files[0])}
+			{...rest}
+		/>
+)
