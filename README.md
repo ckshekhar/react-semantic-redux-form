@@ -10,21 +10,20 @@ Semantic-ui-react component integration with Redux form
 2. [TextAreaField](https://react.semantic-ui.com/addons/text-area#text-area-example-text-area)
 3. [SelectField](https://react.semantic-ui.com/addons/select)
 4. [ToggleField](https://react.semantic-ui.com/addons/radio#radio-example-toggle)
-5. [RadioField](https://react.semantic-ui.com/collections/form#form-example-field-control)
-6. [CheckboxField](https://react.semantic-ui.com/collections/form#form-example-required-field-shorthand)
-7. LabelInputField - A Form Field input component formatted with a label. [Labled Input](https://react.semantic-ui.com/elements/input#input-example-right-labeled-basic)
-8. [Toggle](https://react.semantic-ui.com/addons/radio#radio-example-toggle)
-9. [Radio](https://react.semantic-ui.com/addons/radio)
-10. [Checkbox](https://react.semantic-ui.com/modules/checkbox)
-11. [Input](https://react.semantic-ui.com/collections/form#form-example-subcomponent-control)
-12. [TextArea](https://react.semantic-ui.com/addons/text-area#text-area-example-text-area)
-13. [Select](https://react.semantic-ui.com/addons/select)
-14. Dropdown
-15. DropdownField
-16. RangeField
-17. Range
-18. UploadField
-19. Upload
+
+5. [CheckboxField](https://react.semantic-ui.com/collections/form#form-example-required-field-shorthand)
+6. LabelInputField - A Form Field input component formatted with a label. [Labled Input](https://react.semantic-ui.com/elements/input#input-example-right-labeled-basic)
+7. [Toggle](https://react.semantic-ui.com/addons/radio#radio-example-toggle)
+8. [Checkbox](https://react.semantic-ui.com/modules/checkbox)
+9. [Input](https://react.semantic-ui.com/collections/form#form-example-subcomponent-control)
+10. [TextArea](https://react.semantic-ui.com/addons/text-area#text-area-example-text-area)
+11. [Select](https://react.semantic-ui.com/addons/select)
+12. Dropdown
+13. DropdownField
+14. RangeField
+15. Range
+16. UploadField
+16. Upload
 
 
 # [Demo](https://codesandbox.io/s/50kv0nvprn)
