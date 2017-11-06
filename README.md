@@ -25,6 +25,7 @@ Semantic-ui-react component integration with Redux form
 16. UploadField
 16. Upload
 
+# Radio & RadioField will be removed.
 
 # [Demo](https://codesandbox.io/s/50kv0nvprn)
 
