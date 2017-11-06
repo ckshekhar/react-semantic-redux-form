@@ -70,6 +70,18 @@ export const Toggle = ({input, label, defaultChecked}) => ( //eslint-disable-lin
     onClick={(event, data) => input.onChange(!data.checked)} />
 );
 
+export const Radio = ({input, label, meta: {touched, error}, ...custom}) => ( //eslint-disable-line
+  <RadioComponent label={label}
+    checked={input.value ? true : false}
+    onClick={(event, data) => input.onChange(!data.checked)} {...custom}/>
+);
+
+export const RadioField = ({input, label, meta: {touched, error}, ...custom}) => ( //eslint-disable-line
+  <Form.Field control={RadioComponent} label={label}
+    checked={input.value ? true : false}
+    onClick={(event, data) => input.onChange(!data.checked)} {...custom}/>
+);
+
 export const Checkbox = ({input, label, meta: {touched, error}, ...custom}) => ( //eslint-disable-line
   <CheckboxComponent label={label}
     checked={input.value ? true : false}
