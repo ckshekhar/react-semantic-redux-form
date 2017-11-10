@@ -60,38 +60,38 @@ export const ToggleField = ({input, label, defaultChecked}) => ( //eslint-disabl
   <Form.Field control={RadioComponent} toggle label={label}
     checked={input.value ? true : false}
     defaultChecked={defaultChecked}
-    onClick={(event, data) => input.onChange(!data.checked)}/>
+    onClick={(event, data) => input.onChange(data.checked)}/>
 );
 
 export const Toggle = ({input, label, defaultChecked}) => ( //eslint-disable-line
   <RadioComponent toggle label={label}
     checked={input.value ? true : false}
     defaultChecked={defaultChecked}
-    onClick={(event, data) => input.onChange(!data.checked)} />
+    onClick={(event, data) => input.onChange(data.checked)} />
 );
 
 export const Radio = ({input, label, meta: {touched, error}, ...custom}) => ( //eslint-disable-line
   <RadioComponent label={label}
     checked={input.value ? true : false}
-    onClick={(event, data) => input.onChange(!data.checked)} {...custom}/>
+    onClick={(event, data) => input.onChange(data.checked)} {...custom}/>
 );
 
 export const RadioField = ({input, label, meta: {touched, error}, ...custom}) => ( //eslint-disable-line
   <Form.Field control={RadioComponent} label={label}
     checked={input.value ? true : false}
-    onClick={(event, data) => input.onChange(!data.checked)} {...custom}/>
+    onClick={(event, data) => input.onChange(data.checked)} {...custom}/>
 );
 
 export const Checkbox = ({input, label, meta: {touched, error}, ...custom}) => ( //eslint-disable-line
   <CheckboxComponent label={label}
     checked={input.value ? true : false}
-    onClick={(event, data) => input.onChange(!data.checked)} {...custom}/>
+    onClick={(event, data) => input.onChange(data.checked)} {...custom}/>
 );
 
 export const CheckboxField = ({input, label, meta: {touched, error}, ...custom}) => ( //eslint-disable-line
   <Form.Field control={CheckboxComponent} label={label}
     checked={input.value ? true : false}
-    onClick={(event, data) => input.onChange(!data.checked)} {...custom}/>
+    onClick={(event, data) => input.onChange(data.checked)} {...custom}/>
 );
 
 export const  RangeField = ({input, label, min, max, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
