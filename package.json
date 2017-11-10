@@ -1,6 +1,6 @@
 {
   "name": "react-semantic-redux-form",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Semantic-ui-react component integration with Redux form",
   "main": "dist/index",
   "author": "ChandraShekhar",
