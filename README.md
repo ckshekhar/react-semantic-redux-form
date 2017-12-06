@@ -27,7 +27,7 @@ Semantic-ui-react component integration with Redux form
 
 # Radio & RadioField will be removed.
 
-# [Demo](https://codesandbox.io/s/50kv0nvprn)
+# [Demo](https://codesandbox.io/s/2o061l65yp)
 
 # Example input text
 import { Field } from 'redux-form';
