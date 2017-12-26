@@ -75,6 +75,20 @@ export const TextAreaField = ({
   </Form.Field>
 );
 
+
+export const LabelInputField = ({input, required, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
+  <Form.Field error={!!(touched && error)} required={required}>
+    <InputComponent required={required} {...input} {...rest} />
+    {touched && error ? (
+      <Label basic color="red" pointing>
+        {error}
+      </Label>
+    ) : null}
+  </Form.Field>
+)
+
+
+
 export const TextArea = ({ input, required, meta: { touched, error }, ...rest }: FieldProps) => (
   <TextAreaComponent required={required} {...input} {...rest} />
 );
