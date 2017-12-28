@@ -294,29 +294,33 @@ export const UploadField = ({
   required,
   meta: { touched, error },
   ...rest
-}: FieldProps) => (
-  <Form.Field error={touched && error} required={required}>
-    {label && <label>{label}</label>}
+}: FieldProps) => {
+  delete input.value; //Delete value from input
+  return (
+    <Form.Field error={touched && error} required={required}>
+      {label && <label>{label}</label>}
+      <InputComponent
+        type="file"
+        {...input}
+        {...rest}
+      />
+      {touched && error ? (
+        <Label basic color="red" pointing>
+          {error}
+        </Label>
+      ) : null}
+    </Form.Field>
+  )
+};
+
+export const Upload = ({ input, required, meta: { touched, error }, ...rest }: FieldProps) => {
+  delete input.value;
+  return(
     <InputComponent
+      required={required}
       type="file"
-      value={input.value === '' && input.value}
-      onChange={e => input.onChange(e.target.files[0])}
+      {...input}
       {...rest}
     />
-    {touched && error ? (
-      <Label basic color="red" pointing>
-        {error}
-      </Label>
-    ) : null}
-  </Form.Field>
-);
-
-export const Upload = ({ input, required, meta: { touched, error }, ...rest }: FieldProps) => (
-  <InputComponent
-    required={required}
-    type="file"
-    value={input.value === '' && input.value}
-    onChange={e => input.onChange(e.target.files[0])}
-    {...rest}
-  />
-);
+  )
+};
