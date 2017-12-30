@@ -29,24 +29,30 @@ Semantic-ui-react component integration with Redux form
 # [Demo](https://codesandbox.io/s/2o061l65yp)
 
 # Example input text
+
+```javascript
 import { Field } from 'redux-form';
 
 import { InputField } from 'react-semantic-redux-form';
 
 `<Field name='name' component={InputField}
 	label='Name' placeholder='Name' />`
+```
 
 # Example input textarea
+
+```javascript
 import { Field } from 'redux-form';
 
 import { TextAreaField } from 'react-semantic-redux-form';
 
 `<Field name='name' component={TextAreaField}
 	label='Name' placeholder='Name' />`
-
+```
 
  # Example Login Form
 
+```javascript
 import React from 'react';
 
 import PropTypes from 'prop-types';
@@ -91,3 +97,5 @@ export default reduxForm({
 	form: 'loginForm',	// a unique identifier for this form
 
 })(LoginForm)
+
+```
