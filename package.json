@@ -1,6 +1,6 @@
 {
   "name": "react-semantic-redux-form",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Semantic-ui-react component integration with Redux form",
   "main": "dist/index",
   "author": "ChandraShekhar",
@@ -25,7 +25,7 @@
   "dependencies": {
     "react": "^15.6.1",
     "redux-form": "^7.0.3",
-    "semantic-ui-react": "^0.76.0"
+    "semantic-ui-react": "^0.78.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
