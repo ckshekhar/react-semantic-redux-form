@@ -33,6 +33,7 @@ type FieldProps = {
   required?: boolean,
   width?: string,
   label?: string,
+  inline?: boolean,
   defaultChecked?: boolean
 };
 
@@ -41,10 +42,11 @@ export const InputField = ({
   label,
   required,
   width,
+  inline,
   meta: { touched, error },
   ...rest
 }: FieldProps) => (
-  <Form.Field error={!!(touched && error)} required={required} width={width}>
+  <Form.Field error={!!(touched && error)} required={required} width={width} inline={inline}>
     {label && <label>{label}</label>}
     <InputComponent required={required} {...input} {...rest} />
     {touched && error ? (
@@ -64,10 +66,11 @@ export const TextAreaField = ({
   label,
   required,
   width,
+  inline,
   meta: { touched, error },
   ...rest
 }: FieldProps) => (
-  <Form.Field error={!!(touched && error)} required={required} width={width}>
+  <Form.Field error={!!(touched && error)} required={required} width={width} inline={inline}>
     {label && <label>{label}</label>}
     <TextAreaComponent required={required} {...input} {...rest} />
     {touched && error ? (
@@ -108,11 +111,12 @@ export const SelectField = ({
   label,
   required,
   width,
+  inline,
   options,
   meta: { touched, error },
   ...custom
 }: OptionsFieldProps) => (
-  <Form.Field error={!!(touched && error)} required={required} width={width}>
+  <Form.Field error={!!(touched && error)} required={required} width={width} inline={inline}>
     {label && <label>{label}</label>}
     <SelectComponent
       search
@@ -224,13 +228,14 @@ export const RangeField = ({
   input,
   label,
   width,
+  inline,
   min,
   max,
   required,
   meta: { touched, error },
   ...rest
 }: RangeFieldProps) => (
-  <Form.Field error={!!(touched && error)} required={required} width={width}>
+  <Form.Field error={!!(touched && error)} required={required} width={width} inline={inline}>
     <label>
       {label} : {input.value}
     </label>
@@ -259,11 +264,12 @@ export const DropdownField = ({
   label,
   required,
   width,
+  inline,
   options,
   meta: { touched, error },
   ...custom
 }: OptionsFieldProps) => (
-  <Form.Field error={!!(touched && error)} required={required} width={width}>
+  <Form.Field error={!!(touched && error)} required={required} width={width} inline={inline}>
     {label && <label>{label}</label>}
     <DropdownComponent
       search
@@ -303,12 +309,13 @@ export const UploadField = ({
   input,
   required,
   width,
+  inline,
   meta: { touched, error },
   ...rest
 }: FieldProps) => {
   delete input.value; //Delete value from input
   return (
-    <Form.Field error={touched && error} required={required} width={width}>
+    <Form.Field error={touched && error} required={required} width={width} inline={inline}>
       {label && <label>{label}</label>}
       <InputComponent
         type="file"
