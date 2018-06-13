@@ -48,7 +48,7 @@ export const InputField = ({
 }: FieldProps) => (
   <Form.Field error={!!(touched && error)} required={required} width={width} inline={inline}>
     {label && <label>{label}</label>}
-    <InputComponent required={required} {...input} {...rest} />
+    <InputComponent error={!!(touched && error)} required={required} {...input} {...rest} />
     {touched && error ? (
       <Label basic color="red" pointing>
         {error}
@@ -58,7 +58,7 @@ export const InputField = ({
 );
 
 export const Input = ({ input, required, meta: { touched, error }, ...rest }: FieldProps) => (
-  <InputComponent required={required} {...input} {...rest} />
+  <InputComponent error={!!(touched && error)} required={required} {...input} {...rest} />
 );
 
 export const TextAreaField = ({
@@ -84,7 +84,7 @@ export const TextAreaField = ({
 
 export const LabelInputField = ({input, required, width, meta: { touched, error }, ...rest}: FieldProps) => ( //eslint-disable-line
   <Form.Field error={!!(touched && error)} required={required} width={width}>
-    <InputComponent required={required} {...input} {...rest} />
+    <InputComponent error={!!(touched && error)} required={required} {...input} {...rest} />
     {touched && error ? (
       <Label basic color="red" pointing>
         {error}
