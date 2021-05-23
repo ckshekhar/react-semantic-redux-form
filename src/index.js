@@ -28,6 +28,7 @@ type FieldProps = {
   input: InputProps,
   meta: {
     error?: any,
+    warning?: any,
     touched: boolean
   },
   required?: boolean,
@@ -43,17 +44,25 @@ export const InputField = ({
   required,
   width,
   inline,
-  meta: { touched, error },
+  meta: { touched, error, warning },
   ...rest
 }: FieldProps) => (
   <Form.Field error={!!(touched && error)} required={required} width={width} inline={inline}>
     {label && <label>{label}</label>}
     <InputComponent required={required} {...input} {...rest} />
-    {touched && error ? (
+    {touched && (
+      (error && (
       <Label basic color="red" pointing>
         {error}
       </Label>
-    ) : null}
+      )) || (
+        warning && (
+          <Label basic color="orange" pointing>
+            {warning}
+          </Label>
+        )
+      )
+    )}
   </Form.Field>
 );
 
@@ -67,29 +76,45 @@ export const TextAreaField = ({
   required,
   width,
   inline,
-  meta: { touched, error },
+  meta: { touched, error, warning },
   ...rest
 }: FieldProps) => (
   <Form.Field error={!!(touched && error)} required={required} width={width} inline={inline}>
     {label && <label>{label}</label>}
     <TextAreaComponent required={required} {...input} {...rest} />
-    {touched && error ? (
+    {touched && (
+      (error && (
       <Label basic color="red" pointing>
         {error}
       </Label>
-    ) : null}
+      )) || (
+        warning && (
+          <Label basic color="orange" pointing>
+            {warning}
+          </Label>
+        )
+      )
+    )}
   </Form.Field>
 );
 
 
-export const LabelInputField = ({input, required, width, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
+export const LabelInputField = ({input, required, width, meta: { touched, error, warning }, ...rest}) => ( //eslint-disable-line
   <Form.Field error={!!(touched && error)} required={required} width={width}>
     <InputComponent required={required} {...input} {...rest} />
-    {touched && error ? (
+    {touched && (
+      (error && (
       <Label basic color="red" pointing>
         {error}
       </Label>
-    ) : null}
+      )) || (
+        warning && (
+          <Label basic color="orange" pointing>
+            {warning}
+          </Label>
+        )
+      )
+    )}
   </Form.Field>
 )
 
@@ -113,7 +138,7 @@ export const SelectField = ({
   width,
   inline,
   options,
-  meta: { touched, error },
+  meta: { touched, error, warning },
   ...custom
 }: OptionsFieldProps) => (
   <Form.Field error={!!(touched && error)} required={required} width={width} inline={inline}>
@@ -126,11 +151,19 @@ export const SelectField = ({
       onChange={(event, data) => input.onChange(data.value)}
       {...custom}
     />
-    {touched && error ? (
+    {touched && (
+      (error && (
       <Label basic color="red" pointing>
         {error}
       </Label>
-    ) : null}
+      )) || (
+        warning && (
+          <Label basic color="orange" pointing>
+            {warning}
+          </Label>
+        )
+      )
+    )}
   </Form.Field>
 );
 
@@ -232,7 +265,7 @@ export const RangeField = ({
   min,
   max,
   required,
-  meta: { touched, error },
+  meta: { touched, error, warning },
   ...rest
 }: RangeFieldProps) => (
   <Form.Field error={!!(touched && error)} required={required} width={width} inline={inline}>
@@ -240,11 +273,19 @@ export const RangeField = ({
       {label} : {input.value}
     </label>
     <input type="range" required={required} min={min} max={max} {...input} {...rest} />
-    {touched && error ? (
+    {touched && (
+      (error && (
       <Label basic color="red" pointing>
         {error}
       </Label>
-    ) : null}
+      )) || (
+        warning && (
+          <Label basic color="orange" pointing>
+            {warning}
+          </Label>
+        )
+      )
+    )}
   </Form.Field>
 );
 
@@ -266,7 +307,7 @@ export const DropdownField = ({
   width,
   inline,
   options,
-  meta: { touched, error },
+  meta: { touched, error, warning },
   ...custom
 }: OptionsFieldProps) => (
   <Form.Field error={!!(touched && error)} required={required} width={width} inline={inline}>
@@ -279,11 +320,19 @@ export const DropdownField = ({
       onChange={(event, data) => input.onChange(data.value)}
       {...custom}
     />
-    {touched && error ? (
+    {touched && (
+      (error && (
       <Label basic color="red" pointing>
         {error}
       </Label>
-    ) : null}
+      )) || (
+        warning && (
+          <Label basic color="orange" pointing>
+            {warning}
+          </Label>
+        )
+      )
+    )}
   </Form.Field>
 );
 
@@ -310,7 +359,7 @@ export const UploadField = ({
   required,
   width,
   inline,
-  meta: { touched, error },
+  meta: { touched, error, warning },
   ...rest
 }: FieldProps) => {
   delete input.value; //Delete value from input
@@ -322,11 +371,19 @@ export const UploadField = ({
         {...input}
         {...rest}
       />
-      {touched && error ? (
-        <Label basic color="red" pointing>
-          {error}
-        </Label>
-      ) : null}
+      {touched && (
+      (error && (
+      <Label basic color="red" pointing>
+        {error}
+      </Label>
+      )) || (
+        warning && (
+          <Label basic color="orange" pointing>
+            {warning}
+          </Label>
+        )
+      )
+    )}
     </Form.Field>
   )
 };
