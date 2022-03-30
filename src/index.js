@@ -48,7 +48,7 @@ export const InputField = ({
 }: FieldProps) => (
   <Form.Field error={!!(touched && error)} required={required} width={width} inline={inline}>
     {label && <label>{label}</label>}
-    <InputComponent error={!!(touched && error)} required={required} {...input} {...rest} />
+    <InputComponent required={required} {...input} {...rest} />
     {touched && error ? (
       <Label basic color="red" pointing>
         {error}
@@ -58,7 +58,7 @@ export const InputField = ({
 );
 
 export const Input = ({ input, required, meta: { touched, error }, ...rest }: FieldProps) => (
-  <InputComponent error={!!(touched && error)} required={required} {...input} {...rest} />
+  <InputComponent required={required} {...input} {...rest} />
 );
 
 export const TextAreaField = ({
@@ -82,9 +82,9 @@ export const TextAreaField = ({
 );
 
 
-export const LabelInputField = ({input, required, width, meta: { touched, error }, ...rest}: FieldProps) => ( //eslint-disable-line
+export const LabelInputField = ({input, required, width, meta: { touched, error }, ...rest}) => ( //eslint-disable-line
   <Form.Field error={!!(touched && error)} required={required} width={width}>
-    <InputComponent error={!!(touched && error)} required={required} {...input} {...rest} />
+    <InputComponent required={required} {...input} {...rest} />
     {touched && error ? (
       <Label basic color="red" pointing>
         {error}
@@ -151,7 +151,7 @@ export const Select = ({
   />
 );
 
-export const ToggleField = ({ input, label, defaultChecked, width, ...custom }: FieldProps) => (
+export const ToggleField = ({ input, label, defaultChecked, width }: FieldProps) => (
   <Form.Field
     control={RadioComponent}
     toggle
@@ -160,18 +160,16 @@ export const ToggleField = ({ input, label, defaultChecked, width, ...custom }: 
     defaultChecked={defaultChecked}
     onClick={(event, data) => input.onChange(data.checked)}
     width={width}
-    {...custom}
   />
 );
 
-export const Toggle = ({ input, label, defaultChecked, ...custom }: FieldProps) => (
+export const Toggle = ({ input, label, defaultChecked }: FieldProps) => (
   <RadioComponent
     toggle
     label={label}
     checked={!!input.value}
     defaultChecked={defaultChecked}
     onClick={(event, data) => input.onChange(data.checked)}
-    {...custom}
   />
 );
 
